@@ -1,1 +1,78 @@
-<p>update works!</p>
+<div class="container">
+  <mat-toolbar color="primary">
+    <span class="fill-remaining-space"></span>
+    <span>Country Details</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+
+  <form class="form-container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Update Country ID: {{ id }}</mat-card-title>
+
+
+
+      </mat-card-header>
+      <mat-card-content>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Country Name</mat-label>
+                <input matInput placeholder="Sri Lanka" [ngModel]="country.countryName" name="countryName" required />
+                <mat-hint>Enter the country name here</mat-hint>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Continent</mat-label>
+                <mat-select [ngModel]="country.continent" name="continent">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let continent of continents" [value]="continent">{{ continent }}</mat-option>
+                </mat-select>
+                <mat-hint>Here's the dropdown arrow ^</mat-hint>
+              </mat-form-field>
+
+            </td>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Capital City</mat-label>
+                <input matInput placeholder="Colombo" [ngModel]="country.capital" name="capital" required />
+                <mat-hint>Enter the capital city here</mat-hint>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Currency</mat-label>
+                <input matInput placeholder="LKR" [ngModel]="country.currency" name="currency" required />
+                <mat-hint>Enter the currency here</mat-hint>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Phone Code</mat-label>
+                <input matInput type="number" placeholder="+94" [ngModel]="country.phoneCode" name="phoneCode"
+                  required />
+                <mat-hint>Enter the phone code here</mat-hint>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </mat-card-content>
+      <button mat-raised-button color="primary">Update</button>
+    </mat-card>
+
+  </form>
+
+</div>

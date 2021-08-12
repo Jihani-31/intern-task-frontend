@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CountryRoutingModule } from './country-routing.module';
 import { CreateComponent } from './create/create.component';
@@ -38,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     MatCardModule,
     MatAutocompleteModule,
-    
+    HttpClientModule
+
   ],
 })
-export class CountryModule {}
+export class CountryModule { }
